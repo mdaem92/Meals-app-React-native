@@ -6,7 +6,7 @@ const MealDetailsScreen = (props)=> {
     return (
         <View styles={styles.screen}>
             <Text>
-                The Meal Details Screen
+                The Meal Details Screen for 
             </Text>
         </View>
     );

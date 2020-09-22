@@ -12,10 +12,10 @@ const Stack = createStackNavigator()
 const MealsNavigator = () => {
     
     return (
-        <NavigationContainer>
-            <Stack.Navigator headerMode='float' screenOptions={{headerTitleAlign:'center'}}>
-                <Stack.Screen name={'Categories'} component={CategoriesScreen} />
-                <Stack.Screen name={'Category Meals'} component={CategoryMealsScreen} />
+        <NavigationContainer >
+            <Stack.Navigator headerMode='float' screenOptions={{headerTintColor:'white',headerTitleAlign:'center',headerStyle:{backgroundColor:'#ed0037'}}}>
+                <Stack.Screen name={'Categories'}  component={CategoriesScreen}  />
+                <Stack.Screen name={'Category Meals'} component={CategoryMealsScreen}/>
                 <Stack.Screen name={'Meal Details'} component={MealDetailsScreen} />
             </Stack.Navigator>
         </NavigationContainer>
