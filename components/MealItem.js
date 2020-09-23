@@ -10,7 +10,7 @@ const MealItem = (
         imageUrl,
         duration,
         complexity,
-        affordability
+        affordability,
     }) => {
     return (
         <View style={styles.mealItem}>

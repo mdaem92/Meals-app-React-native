@@ -4,6 +4,7 @@ import * as Font from 'expo-font'
 import {AppLoading} from 'expo'
 import MealsNavigator from './navigation/MealsNavigator'
 import {enableScreens} from 'react-native-screens'
+import MealsTabNavigator from './navigation/MealsTabNavigator';
 
 enableScreens()
 const fetchFonts = ()=>{
@@ -20,7 +21,8 @@ export default function App() {
     return <AppLoading startAsync={fetchFonts} onFinish={finishLoading}/>
   }
   return (
-    <MealsNavigator />
+    // <MealsNavigator />
+    <MealsTabNavigator/>
     
   );
 }

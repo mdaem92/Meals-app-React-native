@@ -18,7 +18,6 @@ const CategoryMealsScreen = ({ route, navigation }) => {
 
     })
     const handleMealsSelect = (route, data) => {
-        console.log('presing');
         navigation.navigate(route, { ...data })
     }
 

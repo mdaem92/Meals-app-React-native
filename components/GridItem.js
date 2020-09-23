@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderRadius: 10,
         elevation: 3,
-        overflow:'hidden'
+        overflow:Platform.OS === 'android'&& Platform.Version >=21 ? 'hidden':'visible'
 
 
     },

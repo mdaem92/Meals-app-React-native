@@ -12,13 +12,13 @@ const Stack = createStackNavigator()
 const MealsNavigator = () => {
     
     return (
-        <NavigationContainer >
+        // <NavigationContainer >
             <Stack.Navigator headerMode='float' screenOptions={{headerTintColor:'white',headerTitleAlign:'center',headerStyle:{backgroundColor:'#ed0037'}}}>
                 <Stack.Screen name={'Categories'}  component={CategoriesScreen}  />
                 <Stack.Screen name={'Category Meals'} component={CategoryMealsScreen}/>
                 <Stack.Screen name={'Meal Details'} component={MealDetailsScreen} />
             </Stack.Navigator>
-        </NavigationContainer>
+        // </NavigationContainer>
 
     )
 }
