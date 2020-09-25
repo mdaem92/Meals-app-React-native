@@ -6,7 +6,7 @@ import {Ionicons,AntDesign} from '@expo/vector-icons'
 
 const HeaderButton = (props)=>{
     return(
-        <Button {...props} IconComponent={Ionicons} iconSize={23} color="blue" />
+        <Button {...props} IconComponent={Ionicons} iconSize={23} color="white" />
     )
 }
 export default HeaderButton

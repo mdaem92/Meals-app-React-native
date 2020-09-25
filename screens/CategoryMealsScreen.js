@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlatList } from 'react-native';
 import { View, StyleSheet } from 'react-native'
 import MealItem from '../components/MealItem';
+import MealList from '../components/MealList';
 import { MEALS as Meals } from '../data/dummy-data'
 
 const CategoryMealsScreen = ({ route, navigation }) => {
@@ -28,11 +28,10 @@ const CategoryMealsScreen = ({ route, navigation }) => {
 
     return (
         <View style={styles.screen}>
-            <FlatList
+            <MealList
                 numColumns={1}
                 renderItem={renderMealItem}
                 data={CategoryMeals}
-                style={{width:'100%',marginVertical:10}}
             />
         </View>
 
