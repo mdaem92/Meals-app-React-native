@@ -7,7 +7,8 @@ const MealList = (props) => {
             // numColumns={1}
             // renderItem={renderMealItem}
             // data={CategoryMeals}
-            style={{ width: '100%', marginVertical: 10,...props.style }}
+            showsVerticalScrollIndicator={false}
+            style={{ width: '100%', marginVertical: 10,backgroundColor:'#f7f7f7',...props.style }}
             {...props}
         />
     );

@@ -5,6 +5,7 @@ import CategoriesScreen from '../screens/CategoriesScreen';
 import MealsTabNavigator from './MealsTabNavigator';
 import FiltersScreen from '../screens/FiltersScreen';
 import FiltersNavigator from './FiltersNavigator';
+import MealsNavigator from './MealsNavigator';
 
 const { Navigator, Screen } = createDrawerNavigator()
 

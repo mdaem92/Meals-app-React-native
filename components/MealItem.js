@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { ImageBackground } from 'react-native';
 import { View, Text, StyleSheet, TouchableNativeFeedback } from 'react-native'
+import DefaultText from './DefaultText';
 
 const MealItem = (
     {
@@ -31,9 +32,9 @@ const MealItem = (
                     </View> */}
 
                     <View style={{ ...styles.row, ...styles.mealDetails }}>
-                        <Text >{duration} mins</Text>
-                        <Text >{complexity.toUpperCase()}</Text>
-                        <Text >{affordability.toUpperCase()}</Text>
+                        <DefaultText >{duration} mins</DefaultText>
+                        <DefaultText >{complexity.toUpperCase()}</DefaultText>
+                        <DefaultText >{affordability.toUpperCase()}</DefaultText>
                     </View>
 
                 </View>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
         height: 200,
         flex: 1,
         elevation: 3,
-        margin: 5,
+        margin: 15,
         borderRadius:10,
         overflow:'hidden'
 

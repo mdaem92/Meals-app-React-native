@@ -28,7 +28,7 @@ const MealsTabNavigator = () => {
                             return <Ionicons name='ios-restaurant' size={25} color={tabInfo.color} />
                         },
                         tabBarColor:'#ed0037',
-                        tabBarLabel:<Text style={{fontFamily:'open-sans-bold'}}>Home</Text>
+                        tabBarLabel:<Text style={{fontFamily:'open-sans'}}>Home</Text>
                         
 
 
@@ -42,8 +42,7 @@ const MealsTabNavigator = () => {
                             return <Ionicons name='ios-star' size={25} color={tabInfo.color} />
                         },
                         tabBarColor:'blue',
-                        tabBarLabel:<Text style={{fontFamily:'open-sans-bold'}}>Favorites</Text>
-
+                        tabBarLabel:<Text style={{fontFamily:'open-sans'}}>Favorites</Text>
 
                     }}
                 />

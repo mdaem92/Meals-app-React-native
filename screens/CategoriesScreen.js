@@ -35,13 +35,14 @@ const CategoriesScreen = ({ navigation }) => {
     )
 
     return (
-        <View>
+        
             <MealList
                 numColumns={2}
                 data={CATEGORIES}
                 renderItem={renderGridItem}
+                style={{backgroundColor:'#f7f7f7'}}
             />
-        </View>
+        
 
     );
 }

@@ -34,6 +34,7 @@ const FavoritesScreen = ({navigation})=> {
                 numColumns={1}
                 data={favoriteMeals}
                 renderItem={renderMealItem}
+                style = {{backgroundColor:'#f7f7f7'}}
             />
         </View>
     );

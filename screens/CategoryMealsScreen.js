@@ -32,6 +32,8 @@ const CategoryMealsScreen = ({ route, navigation }) => {
                 numColumns={1}
                 renderItem={renderMealItem}
                 data={CategoryMeals}
+                style={{backgroundColor:'#f7f7f7'}}
+                
             />
         </View>
 
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 })
 
