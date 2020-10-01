@@ -34,8 +34,6 @@ const TableItem = ({ title, displayName, iconName, value, color }) => {
                         <Text>{value} {title === 'duration' && 'Min'}</Text>
                 }
             </View>
-
-
         </View>
     );
 };

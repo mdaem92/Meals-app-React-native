@@ -8,6 +8,9 @@ import MealsTabNavigator from './navigation/MealsTabNavigator';
 import DrawerNavigator from './navigation/DrawerNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux'
+import store from './Redux/store';
+
 
 enableScreens()
 const fetchFonts = () => {
@@ -24,7 +27,10 @@ export default function App() {
     return <AppLoading startAsync={fetchFonts} onFinish={finishLoading} />
   }
   return (
-    <DrawerNavigator />
+    <Provider store={store}>
+      <DrawerNavigator />
+
+    </Provider>
   );
 }
 

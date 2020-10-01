@@ -6,8 +6,12 @@ import Card from '../components/Card';
 import { FontAwesome, MaterialIcons, Ionicons } from '@expo/vector-icons'
 import TableItem from '../components/TableItem';
 import NumberedListItem from '../components/NumberedListItem';
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { favesSelector, favoritesSelector } from '../Redux/favorites/favorites.selectors'
+import { addToFavorites, removeFromFavorites } from '../Redux/favorites/favorites.actions';
 
-const MealDetailsScreen = ({ route, navigation }) => {
+const MealDetailsScreen = ({ route, navigation , favorites , addToFavorites ,removeFromFavorites }) => {
     const {
         id,
         categoryId,
@@ -21,22 +25,40 @@ const MealDetailsScreen = ({ route, navigation }) => {
         isGlutenFree,
         isVegan,
         isVegetarian,
-        isLactoseFree
+        isLactoseFree,
+        
     } = route.params
 
+
+    const index = favorites.findIndex((meal) => meal.id === id)
+    const isMealFavorite = index >= 0
     navigation.setOptions({
         title,
         headerRight: props => (
             <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                <Item title='Favorite' iconName={'ios-star'} onPress={() => { }} />
+                <Item title='Favorite' iconName={isMealFavorite ? 'ios-star' : 'ios-star-outline'} onPress={handleFavoriteButton} />
             </HeaderButtons>)
     })
+    const handleFavoriteButton = () => {
+        if (isMealFavorite) {
+            return removeFromFavorites(index)
+        }
+        addToFavorites({
+            id,
+            categoryId,
+            title,
+            affordability,
+            complexity,
+            imageUrl,
+            duration,
+            ingredients,
+            steps,
+            isGlutenFree,
+            isVegan,
+            isVegetarian,
+            isLactoseFree,
+        })
 
-    const renderListItem = ({ item, index }) => {
-        <View style={styles.step}>
-            <Text style={styles.number}>{`${index})`}</Text>
-            <Text style={styles.description}>{item}</Text>
-        </View>
     }
 
     return (
@@ -61,15 +83,15 @@ const MealDetailsScreen = ({ route, navigation }) => {
                 </View>
             </View>
             <Text style={styles.title}>Ingredients</Text>
-            <Card extraStyles={{padding:5}}>
+            <Card extraStyles={{ padding: 5 }}>
                 {
-                    ingredients.map((ingredient,index)=><View key={index}><NumberedListItem index={index} item={ingredient}/></View>)
+                    ingredients.map((ingredient, index) => <View key={index}><NumberedListItem index={index} item={ingredient} /></View>)
                 }
             </Card>
             <Text style={styles.title}>Steps</Text>
-            <Card extraStyles={{padding:5}}>
+            <Card extraStyles={{ padding: 5 }}>
                 {
-                    steps.map((step,index) => <View key={index}><NumberedListItem index={index} item={step}/></View>)
+                    steps.map((step, index) => <View key={index}><NumberedListItem index={index} item={step} /></View>)
                 }
             </Card>
         </ScrollView>
@@ -112,12 +134,21 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center'
     },
-    title:{
-        textAlign:'center',
-        margin:5,
-        fontFamily:'open-sans-bold',
+    title: {
+        textAlign: 'center',
+        margin: 5,
+        fontFamily: 'open-sans-bold',
         // color:'red'
-        fontSize:20
+        fontSize: 20
     }
 })
-export default MealDetailsScreen;
+
+const mapStateToProps = createStructuredSelector({
+    favorites:favesSelector
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    addToFavorites: (meal) => dispatch(addToFavorites(meal)),
+    removeFromFavorites: (index) => dispatch(removeFromFavorites(index))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(MealDetailsScreen);
