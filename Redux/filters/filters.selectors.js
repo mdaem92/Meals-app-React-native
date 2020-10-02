@@ -9,7 +9,7 @@ export const veganSelector = createSelector(
 )
 export const vegetarianSelector = createSelector(
     filtersSelector,
-    (filters)=>filters.vegatarian
+    (filters)=>filters.vegetarian
 )
 export const lactoseFreeSelector = createSelector(
     filtersSelector,

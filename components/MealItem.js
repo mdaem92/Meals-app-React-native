@@ -27,10 +27,7 @@ const MealItem = (
                         </ImageBackground>
 
                     </View>
-                    {/* <View style={{...styles.row,height:'80%'}} >
-                        <ImageBackground source={{ uri: imageUrl }} style={styles.imageBackground}/>
-                    </View> */}
-
+     
                     <View style={{ ...styles.row, ...styles.mealDetails }}>
                         <DefaultText >{duration} mins</DefaultText>
                         <DefaultText >{complexity.toUpperCase()}</DefaultText>
