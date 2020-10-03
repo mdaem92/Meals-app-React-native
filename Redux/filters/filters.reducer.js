@@ -1,10 +1,10 @@
 import filtersActionTypes from './filters.types'
 
 const filtersDefaultState = {
-    glutenFree:true,
-    lactoseFree:true,
-    vegetarian:true,
-    vegan:true
+    glutenFree:false,
+    lactoseFree:false,
+    vegetarian:false,
+    vegan:false
 }
 
 export default (state=filtersDefaultState,action)=>{
@@ -14,6 +14,8 @@ export default (state=filtersDefaultState,action)=>{
                 ...state,
                 [action.field]:action.value
             }
+        case filtersActionTypes.RESET_ALL:
+            return filtersDefaultState
             
         default:
             return state

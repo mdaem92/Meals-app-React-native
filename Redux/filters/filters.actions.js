@@ -6,3 +6,7 @@ export const setFieldValue = (field,value)=>({
     field,
     value
 })
+
+export const resetFilters = ()=>({
+    type:FiltersActionTypes.RESET_ALL
+})

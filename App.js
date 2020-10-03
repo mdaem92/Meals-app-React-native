@@ -10,6 +10,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native';
 import { Provider } from 'react-redux'
 import store from './Redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import {persistor} from './Redux/store'
 
 
 enableScreens()
@@ -28,7 +30,10 @@ export default function App() {
   }
   return (
     <Provider store={store}>
-      <DrawerNavigator />
+      <PersistGate loading={<Text>loading...</Text>} persistor={persistor}>
+        <DrawerNavigator />
+      </PersistGate>
+
 
     </Provider>
   );

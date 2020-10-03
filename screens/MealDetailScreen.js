@@ -77,7 +77,7 @@ const MealDetailsScreen = ({ route, navigation , favorites , addToFavorites ,rem
                     <TableItem title={'isGlutenFree'} displayName={'Gluten Free'} value={isGlutenFree} iconName={'grain'} color={'#0b7be3'} />
                 </View>
                 <View style={styles.row}>
-                    <TableItem title={'vegan'} displayName={'Vegan'} value={false} iconName={'leaf'} color={'green'} />
+                    <TableItem title={'vegan'} displayName={'Vegan'} value={isVegan} iconName={'leaf'} color={'green'} />
                     <TableItem title={'vegetarian'} displayName={'Vegetarian'} value={isVegetarian} iconName={'leaf'} color={'#a3c908'} />
 
                 </View>
